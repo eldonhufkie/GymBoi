@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GymBoiApp.Views.ChallengesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Background}">
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>-->
+    <Grid Padding="0,16" RowDefinitions="*,Auto">
+        <CarouselView
+            IndicatorView="indicatorView"
+            Loop="False"
+            PeekAreaInsets="10">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="20"
+                    Orientation="Horizontal"
+                    SnapPointsAlignment="End"
+                    SnapPointsType="Mandatory" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item One</x:String>
+                    <x:String>Item Two</x:String>
+                    <x:String>Item Three</x:String>
+                    <x:String>Item Three</x:String>
+                    <x:String>Item Three</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="16,0,0,0">
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="{StaticResource CardBackground}"
+                            CornerRadius="8"
+                            HasShadow="True"
+                            WidthRequest="320">
+                            <Grid RowDefinitions="*,Auto,Auto">
+                                <BoxView BackgroundColor="Black" HeightRequest="300" />
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="16,4,0,0"
+                                    FontSize="Small"
+                                    Text="PROGRAM - 4 WEEKS"
+                                    TextColor="{StaticResource TextSecondary}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Margin="16,0,0,6"
+                                    FontSize="Medium"
+                                    Text="Strength "
+                                    TextColor="{StaticResource TextSecondary}" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView
+            x:Name="indicatorView"
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            IndicatorColor="LightGray"
+            SelectedIndicatorColor="DarkGray" />
+    </Grid>
+</ContentPage>
